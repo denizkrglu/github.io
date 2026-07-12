@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deniz Köroğlu | Klinik Psikolog | Psikoterapist | Ankara </title>
+    <meta name="description" content="Deniz Köroğlu - Klinik Psikolog & Psikoterapist">
+    <link rel="icon" href="SiteBanner.png" type="image/png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Özel Renk ve Font Ayarları -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f7f5f2',
+                            100: '#e8e5e1',
+                            200: '#d6d3ce',
+                            500: '#1d4659',
+                            700: '#173442',
+                            900: '#0c1b24',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Lora', 'Georgia', 'serif'], // Ana font Inter yerine Lora yapıldı
+                        serif: ['Lora', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Lora', serif; } /* Tüm gövde fontu Lora yapıldı */
+        h1, h2, h3, .font-serif { font-family: 'Lora', serif; }
+    </style>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#FCFCFC] text-gray-800 antialiased selection:bg-brand-200 selection:text-brand-900">
+
+    <!-- ÜST MENÜ (HEADER) -->
+<header class="fixed w-full bg-[#f7f5f2]/80 backdrop-blur-md border-b border-[#e8e5e1] z-50 transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo / İsim -->
+                <div class="flex items-center gap-4">
+                    <!-- Logo Görseli -->
+                    <img src="logo.png" alt="Deniz Köroğlu Logo" class="h-16 md:h-20 w-auto object-contain">
+                    
+                    <!-- İsim ve Ünvan Metni -->
+                    <div class="flex flex-col border-l border-gray-200 pl-4">
+                        <a href="#" class="text-xl md:text-2xl font-semibold text-brand-900 font-serif tracking-wide leading-tight">
+                            Deniz Köroğlu
+                        </a>
+                        <span class="text-[10px] md:text-xs text-brand-500 capitalise tracking-[0.2em] mt-1 font-medium">
+                            Klinik Psikolog & Psikoterapist
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Masaüstü Menü Linkleri -->
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#hakkimda" class="text-[#5c6b4e] hover:text-[#5c6b4e] text-sm font-medium transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-[1px] after:bg-[#738561] after:transition-all after:duration-300">
+                        Hakkımda
+                    </a>
+                    <a href="#calisma-alanlarim" class="text-[#5c6b4e] hover:text-[#5c6b4e] text-sm font-medium transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-[1px] after:bg-[#738561] after:transition-all after:duration-300">
+                        Çalışma Alanlarım
+                    </a>
+                    <a href="#yaklasimim" class="text-[#5c6b4e] hover:text-[#5c6b4e] text-sm font-medium transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-[1px] after:bg-[#738561] after:transition-all after:duration-300">
+                        Yaklaşımım
+                    </a>
+                    <a href="#iletisim" class="text-[#5c6b4e] hover:text-[#5c6b4e] text-sm font-medium transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-[1px] after:bg-[#738561] after:transition-all after:duration-300">
+                        İletişim
+                    </a>
+                </nav>
+
+                <!-- Mobil Menü Butonu (Görsel) -->
+                <div class="md:hidden flex items-center">
+                    <!-- Butona 'mobile-menu-btn' ID'si eklendi -->
+                    <button id="mobile-menu-btn" class="text-gray-500 hover:text-brand-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBİL AÇILIR MENÜ İÇERİĞİ (Başlangıçta Gizli) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#f7f5f2] border-t border-[#e8e5e1]">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
+                <a href="#hakkimda" class="block px-4 py-3 text-base font-medium text-[#5c6b4e] hover:bg-[#e8e5e1] hover:text-[#173442] rounded-sm transition-colors mobile-link">Hakkımda</a>
+                <a href="#calisma-alanlarim" class="block px-4 py-3 text-base font-medium text-[#5c6b4e] hover:bg-[#e8e5e1] hover:text-[#173442] rounded-sm transition-colors mobile-link">Çalışma Alanlarım</a>
+                <a href="#yaklasimim" class="block px-4 py-3 text-base font-medium text-[#5c6b4e] hover:bg-[#e8e5e1] hover:text-[#173442] rounded-sm transition-colors mobile-link">Yaklaşımım</a>
+                <a href="#iletisim" class="block px-4 py-3 text-base font-medium text-[#5c6b4e] hover:bg-[#e8e5e1] hover:text-[#173442] rounded-sm transition-colors mobile-link">İletişim</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- KARŞILAMA EKRANI (HERO) -->
+    <section id="anasayfa" class="pt-36 pb-20 md:pt-48 md:pb-32 bg-[#f7f5f2]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-16">
+            
+            <!-- Yazı Kısmı -->
+            <div class="md:w-3/5 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-medium text-brand-900 leading-tight mb-6 font-serif">
+                    Kendinizi ve ilişkilerinizi <br/>
+                    <span class="text-brand-500 italic font-light text-3xl md:text-4xl">daha derinden anlamak için </span>
+                </h1>
+                <p class="text-base md:text-lg text-gray-500 mb-10 max-w-lg mx-auto md:mx-0 font-light leading-relaxed">
+Psikanalitik Psikoterapi, tekrar eden ilişki örüntülerini, duygusal güçlükleri ve kişinin kendisiyle kurduğu ilişkiyi anlamaya yönelik derinlemesine bir çalışma alanı sunar.                </p>
+                
+                <!-- Butonlar -->
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+    
+    <!-- BİRİNCİL BUTON: İçi dolu, dikkat çekici -->
+    <a href="#iletisim" class="inline-flex justify-center items-center px-8 py-3 text-sm font-medium rounded-sm text-white bg-brand-700 hover:bg-brand-900 transition-colors">
+        Randevu Al
+    </a>
+    
+    <!-- İKİNCİL BUTON: Eski şeffaf/beyaz hali -->
+    <a href="#yaklasimim" class="inline-flex justify-center items-center px-8 py-3 text-sm font-medium rounded-sm text-brand-900 bg-transparent border border-brand-200 hover:border-brand-500 transition-colors">
+        Nasıl Çalışıyorum?
+    </a>
+    
+</div>
+
+                <!-- Sosyal Medya İkonları (Thumbnails) -->
+                <div class="flex items-center justify-center md:justify-start gap-6">
+                    <!-- Linktree İkonu -->
+                    <a href="https://linktr.ee/denizkoroglu" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-900 transition-colors" title="Linktree">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.511 5.853H19.5v2.332h-4.225c-.244 3.011 1.776 4.707 3.325 5.567v2.383c-2.311-.84-4.521-3.082-5.089-6.321h-.022c-.567 3.239-2.777 5.481-5.088 6.321v-2.383c1.549-.86 3.568-2.556 3.324-5.567H7.5V5.853h5.989l.022-.001zM13.5 18.147h3v3h-3v-3zm-6 0h3v3h-3v-3z"/>
+                        </svg>
+                    </a>
+                    <!-- Instagram İkonu -->
+                    <a href="https://www.instagram.com/psikologdenizkoroglu/" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-900 transition-colors" title="Instagram">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </a>
+                    <!-- Academia İkonu -->
+                    <a href="https://denizkoroglu.academia.edu/" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-900 transition-colors" title="Academia.edu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Görsel Kısmı -->
+            <div class="md:w-2/5 flex justify-center">
+                <div class="relative w-64 h-80 md:w-72 md:h-96 rounded-sm overflow-hidden shadow-lg border border-gray-100">
+                    <img src="PP.jpg" alt="Klinik Psikolog Deniz Köroğlu" class="w-full h-full object-cover filter grayscale-[20%]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HAKKIMDA BÖLÜMÜ -->
+    <section id="hakkimda" class="py-24 bg-[#e8e5e1]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-medium text-brand-900 mb-4 font-serif">Hakkımda</h2>
+                <div class="w-12 h-[2px] bg-[#5c6b4e] mx-auto"></div>
+            </div>  
+            <div class="prose prose-lg max-w-none text-gray-600 space-y-6 font-light leading-relaxed text-justify">
+                <p>
+                    Merhaba, ben Deniz Köroğlu. Klinik Psikolog ve Psikoterapist olarak bireyler ve çiftler ile terapi süreçleri yürütmekteyim. 
+                </p>
+                <p>
+                    Çankaya Üniversitesi Psikoloji bölümünden yüksek onur derecesi ve akademik başarı bursu ile mezun oldum. Ardından Başkent Üniversitesi Klinik Psikoloji yüksek lisans programını <i>“Narsisistik Yaralanmanın Yorumlayıcı Fenomenolojik Analizi”</i> başlıklı tezim ile tamamladım. 
+
+                </p>
+                <p>
+                Çankaya Üniversitesi Psikoloji bölümünde öğrenci araştırma görevlisi olarak çalıştım. Çeşitli akademik gruplarda araştırmacı psikolog olarak bulundum. DAAD bursu ile Berlin Uluslararası Psikanalitik Üniversitesi’nde Sosyal Travma Yaz Okulu’na katıldım. Akademik çalışmalarımı Avrupa Psikoloji Kongresi gibi uluslararası platformlarda sundum.
+                </p>
+                <p>
+                İspanya'da bulunan Montesorri Kinder Barcelona eğitim merkezi ve Gülhane Eğitim ve Araştırma Hastanesi Psikiyatri kliniğinde stajlarımı tamamladım. Türk Psikologlar Derneği bünyesinde pandemi, doğal afet ve deprem sahalarında gönüllü çalışmalara katıldım.
+                </p>
+
+                <p>
+                Klinik pratiğim, aldığım eğitimler ve süpervizyonlar doğrultusunda psikanalitik yaklaşım üzerine şekillenmiştir. Akademik bilgi birikimimi ve klinik pratiğimi birleştirerek, kurucusu olduğum Veritas Psikoterapi'de ilişkisel zorluklar, kendilik süreçleri, tekrar eden döngüler, içsel çatışmalar, kayıp ve travma temaları üzerine çalışmaktayım.
+                </p>
+                
+            </div>
+        </div>
+    </section>
+
+  <!-- ÇALIŞMA ALANLARIM -->
+<section id="calisma-alanlarim" class="py-24 bg-[#f7f5f2]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-medium text-brand-900 mb-4 font-serif">Çalışma Alanlarım</h2>
+           <div class="w-12 h-[2px] bg-[#5c6b4e] mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Alan 1 -->
+            <div class="p-8 bg-[#4e070c] transition-colors rounded-sm shadow-sm">
+                <h3 class="text-xl font-medium text-[#f7f5f2] mb-4 font-serif">Bireysel Psikoterapi</h3>
+                <p class="text-[#f7f5f2]/80 font-light text-sm leading-relaxed">
+                    Yetişkinlerle yürütülen, haftada minimum bir seans olmak üzere planlanan yüz yüze psikoterapi sürecidir. İlişkisellik, tekrarlayan döngüler, kendilik süreçleri, kayıp ve yas gibi konularda derinlemesine çalışmayı kapsar.
+                </p>
+            </div>
+
+            <!-- Alan 2 -->
+            <div class="p-8 bg-[#4e070c] transition-colors rounded-sm shadow-sm">
+                <h3 class="text-xl font-medium text-[#f7f5f2] mb-4 font-serif">Çocuk ve Ergen Psikoterapisi</h3>
+                <p class="text-[#f7f5f2]/80 font-light text-sm leading-relaxed">
+                    Çocuk ve ergenlerin duygusal, davranışsal ve ilişkisel güçlüklerinin gelişim dönemlerine uygun biçimde ele alındığı psikoterapi sürecidir. Sözcükler ve terapötik ilişki aracılığıyla ifade edilen ihtiyaçlara odaklanır.
+                </p>
+            </div>
+
+            <!-- Alan 3 -->
+            <div class="p-8 bg-[#4e070c] transition-colors rounded-sm shadow-sm">
+                <h3 class="text-xl font-medium text-[#f7f5f2] mb-4 font-serif">Online Psikoterapi</h3>
+                <p class="text-[#f7f5f2]/80 font-light text-sm leading-relaxed">
+                    Şehir dışında veya yurt dışında yaşayan, klinik ortama gelme imkanı bulunmayan danışanlar için güvenli platformlar üzerinden yürütülen psikoterapi sürecidir.
+                </p>
+            </div>
+            
+            <!-- Alan 4 -->
+            <div class="p-8 bg-[#4e070c] transition-colors rounded-sm shadow-sm">
+                <h3 class="text-xl font-medium text-[#f7f5f2] mb-4 font-serif">Çift Terapisi</h3>
+                <p class="text-[#f7f5f2]/80 font-light text-sm leading-relaxed">
+                    İlişkide tekrar eden çatışmaları, iletişim kopukluklarını ve duygusal ihtiyaçları birlikte anlamaya yönelik bir terapi sürecidir. Çiftin birbirini daha açık duyabilmesi ve daha sağlıklı bir ilişki kurabilmesi amaçlanır.
+                </p>
+            </div>
+            
+            <!-- Alan 5 -->
+            <div class="p-8 bg-[#4e070c] transition-colors rounded-sm shadow-sm">
+                <h3 class="text-xl font-medium text-[#f7f5f2] mb-4 font-serif">Oyun Terapisi</h3>
+                <p class="text-[#f7f5f2]/80 font-light text-sm leading-relaxed">
+                    Çocukların duygularını, yaşantılarını ve iç dünyalarını oyun aracılığıyla ifade edebildiği psikoterapi yöntemidir. Güvenli bir terapötik ortamda çocuğun duygusal gelişimi ve baş etme becerileri desteklenir.
+                </p>
+            </div>
+            
+            <!-- Alan 6 -->
+            <div class="p-8 bg-[#4e070c] transition-colors rounded-sm shadow-sm">
+                <h3 class="text-xl font-medium text-[#f7f5f2] mb-4 font-serif">Atölye ve Grup Çalışmaları</h3>
+                <p class="text-[#f7f5f2]/80 font-light text-sm leading-relaxed">
+                    Psikoeğitim temelli, yaratıcı ve tematik çalışmalar aracılığıyla katılımcıların kendilerini keşfetmelerine alan açar. Çalışmalar, klinik psikolog eşliğinde grup ortamında yürütülür.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- YAKLAŞIMIM -->
+ <!-- YAKLAŞIMIM -->
+<section id="yaklasimim" class="py-24 bg-[#e8e5e1]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+            
+            <!-- SOL SÜTUN: GÖRSEL -->
+            <!-- lg:mt-[94px] ile görsel başlığın altına itilir ve tam "Seans" kelimesiyle hizalanır -->
+            <div class="w-full lg:w-5/12 flex justify-center lg:justify-end lg:mt-[94px]">
+                <!-- h-[420px] ile boyu ayarlanır ve alt kısmı "anlamda..." kelimesiyle hizalanır -->
+                <img src="freud.webp" alt="Yaklaşımım Görseli" class="w-full max-w-sm h-[420px] object-cover shadow-sm">
+            </div>
+
+            <!-- SAĞ SÜTUN: BAŞLIK VE YAZILAR -->
+            <div class="w-full lg:w-7/12">
+                
+                <!-- BAŞLIK (Sadece yazı bloğuna göre ortalandı) -->
+                <div class="mb-10 text-center">
+                    <h2 class="text-3xl font-medium text-brand-900 mb-4 font-serif">Yaklaşımım</h2>
+             <div class="w-12 h-[2px] bg-[#5c6b4e] mx-auto"></div>
+                </div>
+
+                <!-- YAZILAR -->
+                <div class="prose prose-lg max-w-none text-gray-600 space-y-6 font-light leading-relaxed text-justify">
+                    <p>
+                        Seans odasını ve psikoterapiyi, kişinin kendi gerçeğiyle yargılanmadan karşılaşabileceği, kapsayıcı ve güvenli bir alan olarak görüyorum. Terapi sürecinde acele etmeden, anlamlı ya da anlamsız ayırt etmeksizin sözcüklere dökülenleri danışanımla birlikte duymayı ve düşünmeyi önemsiyorum. 
+                    </p>
+                    
+                    <p>
+                        Görünür ve görünmeyen yaralarla, kayıplarla ve ilişkilerle çalışmak için güvenli bir alan açıyor, kişilerin kendilerini ve ilişkilerini daha yakından ve derinden görmelerine, yaşadıkları tekrarların arka planını anlamlandırmalarına eşlik ediyorum.
+                    </p>
+                    
+                    <p>
+                        Bu sebeple klinik deneyimimi seans odasında <i><strong class="font-bold text-gray-900">psikanalitik bir çerçeveyle</strong></i> birleştirmeyi tercih ediyorum. Semptom, onu üreten ruhsal yapı anlaşılmadan susturulduğunda, başka bir biçimde geri dönebildiği için semptomu ortadan kaldırmak yerine onun ne söylediğini duyabilecek bir ruhsal alan yaratmayı ve bu anlamda derinleşmeyi önemsiyorum.
+                    </p>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+            
+          
+    <!-- İLETİŞİM BÖLÜMÜ -->
+   <section id="iletisim" class="py-24 bg-brand-50 border-t border-brand-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-medium text-brand-900 mb-4 font-serif">İletişim & Randevu</h2>
+            <p class="text-gray-500 font-light">
+                <i>Bilgi ve randevu almak için bana 
+                <a href="mailto:uzmpsk.denizkoroglu@gmail.com" class="font-bold underline hover:text-brand-700 transition-colors">e-posta</a>, 
+                <a href="tel:+905016176509" class="font-bold underline hover:text-brand-700 transition-colors">telefon</a> ya da 
+                <a href="https://wa.me/905016176509" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:text-brand-700 transition-colors">WhatsApp</a> 
+                üzerinden ulaşabilirsiniz.</i>
+            </p>
+        </div>
+
+        <div class="bg-[#e8e5e1] p-10 border border-[#d6d3ce] shadow-sm rounded-sm max-w-2xl mx-auto">
+            <div class="space-y-8">
+                <div class="flex flex-col items-center text-center">
+                    <span class="text-xs text-brand-500 uppercase tracking-widest mb-2 font-medium">E-Posta</span>
+                    <a href="mailto:uzmpsk.denizkoroglu@gmail.com" class="text-lg text-brand-900 hover:text-brand-500 transition-colors">uzmpsk.denizkoroglu@gmail.com</a>
+                </div>
+                
+                <div class="w-full h-px bg-[#d6d3ce]"></div>
+
+                <div class="flex flex-col items-center text-center">
+                    <span class="text-xs text-brand-500 uppercase tracking-widest mb-2 font-medium">Telefon</span>
+                    <a class="text-lg text-brand-900" href="tel:+905016176509">+90 (501) 617 65 09</a>
+                </div>
+
+                <div class="w-full h-px bg-[#d6d3ce]"></div>
+
+                <div class="flex flex-col items-center text-center">
+                    <span class="text-xs text-brand-500 uppercase tracking-widest mb-2 font-medium">Adres</span>
+                    <a href="https://maps.app.goo.gl/JHRbW3pSvhw3qzMB6" target="_blank" rel="noopener noreferrer" class="text-brand-900 hover:underline transition-all">
+                        Mustafa Kemal Mah., 2129.Sk.<br>
+                        Çankaya / Ankara
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ALT BİLGİ (FOOTER) -->
+    <footer class="bg-brand-900 py-12 text-center">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-lg font-serif text-[#f7f5f2] mb-2">Deniz Köroğlu</h3>
+            <p class="text-sm font-light text-[#e8e5e1]/80 mb-6">Klinik Psikolog & Psikoterapist</p>
+            
+            <div class="flex justify-center items-center gap-6 mb-8">
+                <a href="https://linktr.ee/denizkoroglu" target="_blank" rel="noopener noreferrer" class="text-[#e8e5e1]/70 hover:text-[#f7f5f2] transition-colors" title="Linktree">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.511 5.853H19.5v2.332h-4.225c-.244 3.011 1.776 4.707 3.325 5.567v2.383c-2.311-.84-4.521-3.082-5.089-6.321h-.022c-.567 3.239-2.777 5.481-5.088 6.321v-2.383c1.549-.86 3.568-2.556 3.324-5.567H7.5V5.853h5.989l.022-.001zM13.5 18.147h3v3h-3v-3zm-6 0h3v3h-3v-3z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/psikologdenizkoroglu/" target="_blank" rel="noopener noreferrer" class="text-[#e8e5e1]/70 hover:text-[#f7f5f2] transition-colors" title="Instagram">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                </a>
+                <a href="https://denizkoroglu.academia.edu/" target="_blank" rel="noopener noreferrer" class="text-[#e8e5e1]/70 hover:text-[#f7f5f2] transition-colors" title="Academia.edu">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="border-t border-brand-700/50 pt-8 text-xs font-light tracking-wide text-[#e8e5e1]/60">
+                <p>© 2026 Deniz Köroğlu. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobil Menü İşleyiş (JavaScript) -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Üç çizgiye tıklayınca menüyü aç/kapat
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Danışan menüden bir linke tıklayınca menü otomatik kapansın (ekranda açık kalmasın)
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
